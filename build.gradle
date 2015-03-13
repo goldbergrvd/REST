@@ -1,0 +1,22 @@
+apply plugin: 'war'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework:spring-core:4.1.4.RELEASE'
+    compile 'org.springframework:spring-webmvc:4.1.4.RELEASE'
+
+    // json request body inject
+    compile 'com.google.code.gson:gson:2.3.1'
+
+    // bean validation
+    compile 'org.hibernate:hibernate-validator:5.1.3.Final'
+    compile 'org.apache.tomcat.embed:tomcat-embed-el:8.0.17' // bitch, why depend on this?
+}
+
+task deployWar(type: Copy, dependsOn: 'build') {
+    from 'build/libs/REST.war'
+    into '/media/hubert/1b1b28ff-434a-486b-8b85-dcf63dfdb448/apache-tomcat-6.0.43/webapps'
+}
