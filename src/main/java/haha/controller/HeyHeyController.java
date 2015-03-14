@@ -1,25 +1,17 @@
 package haha.controller;
 
+import haha.bean.Car;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import javax.validation.Valid;
-
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.MatrixVariable;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.bind.annotation.RestController;
-
-import static org.springframework.web.bind.annotation.RequestMethod.*;
-
-import haha.bean.Car;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @RestController
 @RequestMapping("/heyhey")
@@ -61,11 +53,11 @@ public class HeyHeyController {
         return "Oh @RequestParam yes!";
     }
 
-    @RequestMapping(value="/map", method=POST)
-    public String map(@MatrixVariable Map<String, String> map) {
-        System.out.println(map.get("id") + " - " + map.get("data"));
-        return "Oh @MatrixVariable yes!";
-    }
+//    @RequestMapping(value="/map", method=POST)
+//    public String map(@MatrixVariable Map<String, String> map) {
+//        System.out.println(map.get("id") + " - " + map.get("data"));
+//        return "Oh @MatrixVariable yes!";
+//    }
 
     @RequestMapping(value="/header", method=POST)
     public String header(@RequestHeader Map<String, String> map) {
