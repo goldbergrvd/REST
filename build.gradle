@@ -13,10 +13,16 @@ dependencies {
 
     // bean validation
     compile 'org.hibernate:hibernate-validator:5.1.3.Final'
-    compile 'org.apache.tomcat.embed:tomcat-embed-el:8.0.17' // bitch, why depend on this?
+//    compile 'org.apache.tomcat.embed:tomcat-embed-el:8.0.17' // tomcat version with 6.0.XX need this to validate...
+
+    // file upload
+    compile 'commons-fileupload:commons-fileupload:1.2.2'
+    compile 'commons-io:commons-io:2.4'
+
+    providedCompile 'org.apache.tomcat:tomcat-catalina:8.0.15'
 }
 
 task deployWar(type: Copy, dependsOn: 'build') {
     from 'build/libs/REST.war'
-    into '/media/hubert/1b1b28ff-434a-486b-8b85-dcf63dfdb448/apache-tomcat-6.0.43/webapps'
+    into '/media/hubert/1b1b28ff-434a-486b-8b85-dcf63dfdb448/apache-tomcat-8.0.15/webapps'
 }
