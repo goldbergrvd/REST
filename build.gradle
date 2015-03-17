@@ -7,6 +7,8 @@ repositories {
 dependencies {
     compile 'org.springframework:spring-core:4.1.4.RELEASE'
     compile 'org.springframework:spring-webmvc:4.1.4.RELEASE'
+    compile 'org.springframework:spring-orm:4.1.4.RELEASE'
+    compile 'org.springframework:spring-tx:4.1.4.RELEASE'
 
     // json request body inject
     compile 'com.google.code.gson:gson:2.3.1'
@@ -18,6 +20,12 @@ dependencies {
     // file upload
     compile 'commons-fileupload:commons-fileupload:1.2.2'
     compile 'commons-io:commons-io:2.4'
+
+    // mysql
+    compile 'mysql:mysql-connector-java:5.1.34'
+
+    // jpa
+    compile 'org.eclipse.persistence:org.eclipse.persistence.jpa:2.6.0'
 
     providedCompile 'org.apache.tomcat:tomcat-catalina:8.0.15'
 }
