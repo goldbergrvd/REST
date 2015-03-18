@@ -9,6 +9,8 @@ dependencies {
     compile 'org.springframework:spring-webmvc:4.1.4.RELEASE'
     compile 'org.springframework:spring-orm:4.1.4.RELEASE'
     compile 'org.springframework:spring-tx:4.1.4.RELEASE'
+    compile 'org.springframework.data:spring-data-commons:1.9.2.RELEASE'
+    compile 'org.springframework.data:spring-data-jpa:1.7.2.RELEASE'
 
     // json request body inject
     compile 'com.google.code.gson:gson:2.3.1'
